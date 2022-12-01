@@ -1,0 +1,124 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1440px;
+    height: 425px;
+    /* margin: 0 auto; */
+    padding-bottom: 0;
+    /* border: 1px solid red; */
+    padding-bottom: 30px;
+    margin-bottom: 0;
+    position: relative;
+    
+    
+}
+
+
+
+:root {
+    --animation-cycle: 10s;
+    /*quantity cards*/
+    --time-start-delay: calc(var(--animation-cycle) / 7);
+}
+
+
+.card {
+    display: inline-block;
+    background-color: #6050c5;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    animation-duration: var(--animation-cycle);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: card;
+    text-align: center;
+    box-shadow: 2px 53px 49px -23px rgba(77, 77, 77, 1);
+    width: 139px;
+    height: 260px;
+}
+
+
+.container:hover .card {
+    animation-play-state: paused;
+}
+
+.card__img {
+    display: block;
+    margin: 20% auto;
+    width: 40%;
+    height: 90px;
+    object-fit: contain;
+}
+
+.card__title {
+    color: #fff;
+    margin-bottom: 0;
+
+}
+
+.card__text {
+    color: #ccc;
+    font-size: 70%;
+    margin: 0 auto;
+    white-space: pre;
+}
+
+
+
+.card-2 {
+    animation-delay: calc(var(--time-start-delay) * -1);
+}
+
+.card-3 {
+    animation-delay: calc(var(--time-start-delay) * -2);
+}
+
+.card-4 {
+    animation-delay: calc(var(--time-start-delay) * -3);
+}
+
+.card-5 {
+    animation-delay: calc(var(--time-start-delay) * -4);
+}
+
+.card-6 {
+    animation-delay: calc(var(--time-start-delay) * -5);
+}
+
+.card-7 {
+    animation-delay: calc(var(--time-start-delay) * -6);
+}
+
+
+
+@keyframes card {
+    0% {
+        transform: translateX(0) scale(1) translateY(0);
+        z-index: 1;
+    }
+
+    26% {
+        transform: translateX(362px) scale(1.5) translateY(-16%);
+        z-index: 4;
+    }
+
+    58% {
+        transform: translateX(853px) scale(1.5) translateY(-16%);
+        z-index: 6;
+    }
+
+    90% {
+        transform: translateX(1300px) scale(1) translateY(0);
+    }
+
+    100% {
+        transform: translateX(0px) scale(1) translateY(0);
+        z-index: 0;
+    }
+
+}
